@@ -31,6 +31,4 @@ RUN playwright install --with-deps
 EXPOSE 8000
 
 # 設置容器啟動時執行的命令
-CMD ["sh", "-c", "sleep 10 && uvicorn api.index:app --host 0.0.0.0 --port 8000"]
-
-
+CMD uvicorn api.index:app --host 0.0.0.0 --port $PORT
