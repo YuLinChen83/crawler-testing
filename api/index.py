@@ -55,3 +55,7 @@ async def get_kobo_99():
     except Exception as e:
         print("❌ 發生錯誤：", str(e))  # 本地 debug 用
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
+@app.get("/health")
+def healthcheck():
+    return {"status": "healthy"}
